@@ -1,20 +1,21 @@
+
+/*
+D'abord on compte combien de fois un nombre apparait pour avoir la fréquence
+=> [{4: 2}, {5: 1}, {8: 3}]
+
+On tri les nombres par fréquence
+=> [{8: 3}, {4: 2}, {5: 1}]
+
+Puis on construit un nouveau tableau trié
+=> [8, 8, 8, 4, 4, 5]
+
+*/
 const tri = (numbers) => {
-  numberCounter = countNumber(numbers)
-  // D'abord on compte combien de fois un nombre apparait pour avoir la fréquence
-  // [{4: 2}, {5: 1}, {8: 3}]
-
-  let sortedNumberCounter = sortNumberCounter(numberCounter)
-  // On tri les nombres par fréquence
-  // [{8: 3}, {4: 2}, {5: 1}]
-
-  let new_numbers = buildNewFrequencySortedArray(sortedNumberCounter)
-  // puis on construit un nouveau tableau trié
-  // [8, 8, 8, 4, 4, 5]
-
-  return new_numbers
+  return buildNewFrequencySortedArrayWith( sortNumbersByFrequencyWith( frequencies( numbers ) ) )
+  // return construitUnNouveauTalbeauAPartirDe( nombresTrieParFrequenceDe( frequences( numbers ) ) )
 }
 
-const countNumber = (numbers) => {
+const frequencies = (numbers) => {
   // => numbers == [4]
   let resultat = []
 
@@ -40,7 +41,7 @@ const countNumber = (numbers) => {
   return resultat
 }
 
-const sortNumberCounter = (numberCounter) => {
+const sortNumbersByFrequencyWith = (numberCounter) => {
   return numberCounter.sort(function(a, b) {
     // a == {8: 3}
     // Object.values(a) => [3]
@@ -52,7 +53,7 @@ const sortNumberCounter = (numberCounter) => {
   })
 }
 
-const buildNewFrequencySortedArray = (sortedNumberCounter) => {
+const buildNewFrequencySortedArrayWith = (sortedNumberCounter) => {
   let resultat = []
   sortedNumberCounter.forEach(function (x){
     // x == {8: 3}

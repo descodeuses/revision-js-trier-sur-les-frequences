@@ -18,21 +18,21 @@ describe("Sort", function() {
     });
   })
 
-  describe("countNumber", function() {
+  describe("frequencies", function() {
     it("[1] renvoie [{1: 1}]", function() {
-      expect(countNumber([1])).toEqual( [{1: 1}] )
+      expect(frequencies([1])).toEqual( [{1: 1}] )
     })
 
     it("[4] renvoie [{4: 1}]", function() {
-      expect(countNumber([4])).toEqual([{4: 1}])
+      expect(frequencies([4])).toEqual([{4: 1}])
     })
 
     it("[4, 4] renvoie [{4: 2}]", function() {
-      expect(countNumber([4, 4])).toEqual([{4: 2}])
+      expect(frequencies([4, 4])).toEqual([{4: 2}])
     })
 
     it("[4, 4, 5, 8, 8, 8] renvoie [{4: 2}, {5: 1}, {8: 3}]", function() {
-      expect(countNumber([4, 4, 5, 8, 8, 8])).toEqual( [{4: 2}, {5: 1}, {8: 3}] )
+      expect(frequencies([4, 4, 5, 8, 8, 8])).toEqual( [{4: 2}, {5: 1}, {8: 3}] )
     })
   })
 
