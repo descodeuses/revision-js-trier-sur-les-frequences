@@ -1,7 +1,5 @@
 # Trier des entiers
 
-_Test JavaScript de SAP_
-
 Design a way to sort a list of positive integers in the descending order according to frequency of the elements. The elements with higher frequency come before those with lower frequency. Elements with the same frequency come in the same order as they appear in the given list.
 
 Input
